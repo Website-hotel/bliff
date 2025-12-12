@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bliff Real Estate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['"Playfair Display"', 'serif'],
+              sans: ['"Lato"', 'sans-serif'],
+            },
+            colors: {
+              champagne: '#d4af37',
+              charcoal: '#1a1a1a',
+              'glass-dark': 'rgba(26, 26, 26, 0.8)',
+              'glass-light': 'rgba(255, 255, 255, 0.1)',
+            },
+            animation: {
+              'draw-house': 'draw 3s ease-in-out forwards',
+              'fade-in': 'fadeIn 1s ease-out forwards',
+              'slide-up': 'slideUp 0.8s ease-out forwards',
+              'scroll': 'scroll 60s linear infinite',
+              'build-up': 'buildUp 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+              'roof-drop': 'roofDrop 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+            },
+            keyframes: {
+              draw: {
+                '0%': { strokeDasharray: '1000', strokeDashoffset: '1000' },
+                '100%': { strokeDashoffset: '0' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              scroll: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-50%)' },
+              },
+              buildUp: {
+                '0%': { transform: 'scaleY(0)', opacity: '0' },
+                '100%': { transform: 'scaleY(1)', opacity: '1' },
+              },
+              roofDrop: {
+                '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1a1a1a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #d4af37;
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .pause-on-hover:hover {
+        animation-play-state: paused;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.10.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+</head>
+  <body class="bg-charcoal text-white antialiased">
+    <div id="root"></div>
+  </body>
+</html>
